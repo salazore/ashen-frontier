@@ -1,0 +1,795 @@
+{
+  "schema_version": 1,
+  "name": "The Cinder Basin",
+  "game": "Ashen Frontier",
+  "status": "design_blueprint_not_unity_scene",
+  "units": "meters",
+  "axes": {
+    "x": "east",
+    "z": "north",
+    "y": "up"
+  },
+  "bounds_xz": {
+    "min": [
+      0,
+      0
+    ],
+    "max": [
+      3000,
+      3000
+    ]
+  },
+  "placement_rule": "XZ coordinates only. Sample the constructed terrain/walkable surface for Y. The lake requires elevated walkways or rooftops.",
+  "planning_tiles": [
+    {
+      "id": "A1",
+      "origin_xz": [
+        0,
+        0
+      ],
+      "size_m": 1000
+    },
+    {
+      "id": "B1",
+      "origin_xz": [
+        1000,
+        0
+      ],
+      "size_m": 1000
+    },
+    {
+      "id": "C1",
+      "origin_xz": [
+        2000,
+        0
+      ],
+      "size_m": 1000
+    },
+    {
+      "id": "A2",
+      "origin_xz": [
+        0,
+        1000
+      ],
+      "size_m": 1000
+    },
+    {
+      "id": "B2",
+      "origin_xz": [
+        1000,
+        1000
+      ],
+      "size_m": 1000
+    },
+    {
+      "id": "C2",
+      "origin_xz": [
+        2000,
+        1000
+      ],
+      "size_m": 1000
+    },
+    {
+      "id": "A3",
+      "origin_xz": [
+        0,
+        2000
+      ],
+      "size_m": 1000
+    },
+    {
+      "id": "B3",
+      "origin_xz": [
+        1000,
+        2000
+      ],
+      "size_m": 1000
+    },
+    {
+      "id": "C3",
+      "origin_xz": [
+        2000,
+        2000
+      ],
+      "size_m": 1000
+    }
+  ],
+  "starter": {
+    "bounds_xz": {
+      "min": [
+        250,
+        250
+      ],
+      "max": [
+        850,
+        850
+      ]
+    },
+    "size_m": 600,
+    "objective": "Collect one battery at wreck, power relay, return to changed outpost gate/radio.",
+    "landmarks": [
+      {
+        "id": "spawn",
+        "xz": [
+          480,
+          480
+        ]
+      },
+      {
+        "id": "water_point",
+        "xz": [
+          430,
+          520
+        ]
+      },
+      {
+        "id": "salvage_wreck",
+        "xz": [
+          750,
+          450
+        ]
+      },
+      {
+        "id": "relay",
+        "xz": [
+          770,
+          760
+        ]
+      },
+      {
+        "id": "water_tower",
+        "xz": [
+          600,
+          630
+        ]
+      }
+    ],
+    "paths": [
+      {
+        "id": "outbound",
+        "xz": [
+          [
+            480,
+            480
+          ],
+          [
+            650,
+            440
+          ],
+          [
+            750,
+            450
+          ],
+          [
+            810,
+            570
+          ],
+          [
+            770,
+            760
+          ]
+        ]
+      },
+      {
+        "id": "return",
+        "xz": [
+          [
+            770,
+            760
+          ],
+          [
+            650,
+            720
+          ],
+          [
+            600,
+            630
+          ],
+          [
+            480,
+            480
+          ]
+        ]
+      }
+    ]
+  },
+  "pois": [
+    {
+      "id": "cinderhaven",
+      "name": "Cinderhaven",
+      "xz": [
+        480,
+        480
+      ],
+      "risk": "low",
+      "description": "Safe hub; depot, scrap fence, water point, amber lamps",
+      "asset_roles": [
+        "zombie",
+        "buildings",
+        "survival"
+      ]
+    },
+    {
+      "id": "old_orchard",
+      "name": "Old Orchard",
+      "xz": [
+        550,
+        1350
+      ],
+      "risk": "low",
+      "description": "Abandoned farm, greenhouse frame and food salvage",
+      "asset_roles": [
+        "nature",
+        "farm"
+      ]
+    },
+    {
+      "id": "dead_signal",
+      "name": "Dead Signal Ridge",
+      "xz": [
+        580,
+        2460
+      ],
+      "risk": "medium",
+      "description": "Broken radio mast above switchback trail",
+      "asset_roles": [
+        "nature",
+        "custom"
+      ]
+    },
+    {
+      "id": "blackpine",
+      "name": "Blackpine Burn",
+      "xz": [
+        1500,
+        2400
+      ],
+      "risk": "medium",
+      "description": "Charred woodland, camps and concealed salvage",
+      "asset_roles": [
+        "nature",
+        "survival"
+      ]
+    },
+    {
+      "id": "rustline",
+      "name": "Rustline Yard",
+      "xz": [
+        1510,
+        1680
+      ],
+      "risk": "medium",
+      "description": "Rail depot, freight cars and scrap",
+      "asset_roles": [
+        "train",
+        "zombie",
+        "buildings"
+      ]
+    },
+    {
+      "id": "glasswater",
+      "name": "Glasswater",
+      "xz": [
+        1450,
+        1050
+      ],
+      "risk": "medium-high",
+      "description": "Flooded town; pharmacy and rooftop routes",
+      "asset_roles": [
+        "buildings",
+        "zombie"
+      ]
+    },
+    {
+      "id": "red_quarry",
+      "name": "Red Quarry",
+      "xz": [
+        2510,
+        2400
+      ],
+      "risk": "high",
+      "description": "Stepped pit, conveyor silhouette and exposed salvage",
+      "asset_roles": [
+        "nature",
+        "custom"
+      ]
+    },
+    {
+      "id": "mercy_dam",
+      "name": "Mercy Dam",
+      "xz": [
+        2190,
+        1510
+      ],
+      "risk": "high",
+      "description": "Continuous dam deck and sluice house across river",
+      "asset_roles": [
+        "custom"
+      ]
+    },
+    {
+      "id": "ashworks",
+      "name": "The Ashworks",
+      "xz": [
+        2550,
+        450
+      ],
+      "risk": "high",
+      "description": "Twin chimneys, pipes, rusted processing halls and ash",
+      "asset_roles": [
+        "custom",
+        "zombie"
+      ]
+    }
+  ],
+  "routes": [
+    {
+      "id": "west_1",
+      "name": "Outpost road",
+      "from_poi": "cinderhaven",
+      "to_poi": "old_orchard",
+      "kind": "road",
+      "state": "planned_open",
+      "xz": [
+        [
+          480,
+          480
+        ],
+        [
+          410,
+          780
+        ],
+        [
+          460,
+          1080
+        ],
+        [
+          550,
+          1350
+        ]
+      ]
+    },
+    {
+      "id": "west_2",
+      "name": "Ridge switchback",
+      "from_poi": "old_orchard",
+      "to_poi": "dead_signal",
+      "kind": "trail",
+      "state": "planned_open",
+      "xz": [
+        [
+          550,
+          1350
+        ],
+        [
+          410,
+          1640
+        ],
+        [
+          680,
+          1880
+        ],
+        [
+          440,
+          2130
+        ],
+        [
+          580,
+          2460
+        ]
+      ]
+    },
+    {
+      "id": "west_3",
+      "name": "North burn trail",
+      "from_poi": "dead_signal",
+      "to_poi": "blackpine",
+      "kind": "trail",
+      "state": "planned_open",
+      "xz": [
+        [
+          580,
+          2460
+        ],
+        [
+          910,
+          2540
+        ],
+        [
+          1210,
+          2440
+        ],
+        [
+          1500,
+          2400
+        ]
+      ]
+    },
+    {
+      "id": "west_4",
+      "name": "Charcoal road",
+      "from_poi": "blackpine",
+      "to_poi": "rustline",
+      "kind": "road",
+      "state": "planned_open",
+      "xz": [
+        [
+          1500,
+          2400
+        ],
+        [
+          1430,
+          2070
+        ],
+        [
+          1570,
+          1880
+        ],
+        [
+          1510,
+          1680
+        ]
+      ]
+    },
+    {
+      "id": "west_5",
+      "name": "Depot descent",
+      "from_poi": "rustline",
+      "to_poi": "glasswater",
+      "kind": "road",
+      "state": "planned_open",
+      "xz": [
+        [
+          1510,
+          1680
+        ],
+        [
+          1400,
+          1450
+        ],
+        [
+          1450,
+          1240
+        ],
+        [
+          1450,
+          1050
+        ]
+      ]
+    },
+    {
+      "id": "west_6",
+      "name": "Home road",
+      "from_poi": "glasswater",
+      "to_poi": "cinderhaven",
+      "kind": "road",
+      "state": "planned_open",
+      "xz": [
+        [
+          1450,
+          1050
+        ],
+        [
+          1220,
+          920
+        ],
+        [
+          990,
+          700
+        ],
+        [
+          710,
+          620
+        ],
+        [
+          480,
+          480
+        ]
+      ]
+    },
+    {
+      "id": "dam_approach",
+      "name": "Dam approach",
+      "from_poi": "rustline",
+      "to_poi": "mercy_dam",
+      "kind": "road",
+      "state": "planned_open",
+      "xz": [
+        [
+          1510,
+          1680
+        ],
+        [
+          1830,
+          1570
+        ],
+        [
+          2020,
+          1510
+        ],
+        [
+          2190,
+          1510
+        ]
+      ]
+    },
+    {
+      "id": "east_1",
+      "name": "Ashworks road",
+      "from_poi": "mercy_dam",
+      "to_poi": "ashworks",
+      "kind": "road",
+      "state": "planned_open",
+      "xz": [
+        [
+          2190,
+          1510
+        ],
+        [
+          2340,
+          1510
+        ],
+        [
+          2440,
+          1110
+        ],
+        [
+          2600,
+          780
+        ],
+        [
+          2550,
+          450
+        ]
+      ]
+    },
+    {
+      "id": "east_2",
+      "name": "Quarry haul road",
+      "from_poi": "mercy_dam",
+      "to_poi": "red_quarry",
+      "kind": "road",
+      "state": "planned_open",
+      "xz": [
+        [
+          2190,
+          1510
+        ],
+        [
+          2370,
+          1740
+        ],
+        [
+          2390,
+          2110
+        ],
+        [
+          2510,
+          2400
+        ]
+      ]
+    },
+    {
+      "id": "north_crossing",
+      "name": "Upper service road",
+      "from_poi": "blackpine",
+      "to_poi": "red_quarry",
+      "kind": "road",
+      "state": "planned_open",
+      "xz": [
+        [
+          1500,
+          2400
+        ],
+        [
+          1810,
+          2520
+        ],
+        [
+          2113,
+          2500
+        ],
+        [
+          2320,
+          2510
+        ],
+        [
+          2510,
+          2400
+        ]
+      ]
+    },
+    {
+      "id": "south_shortcut",
+      "name": "Repairable southern bridge",
+      "from_poi": "glasswater",
+      "to_poi": "ashworks",
+      "kind": "shortcut",
+      "state": "later_unlock",
+      "xz": [
+        [
+          1450,
+          1050
+        ],
+        [
+          1570,
+          730
+        ],
+        [
+          1810,
+          550
+        ],
+        [
+          2042,
+          550
+        ],
+        [
+          2300,
+          530
+        ],
+        [
+          2550,
+          450
+        ]
+      ]
+    }
+  ],
+  "water": {
+    "river_xz": [
+      [
+        2050,
+        3000
+      ],
+      [
+        2050,
+        2700
+      ],
+      [
+        2160,
+        2350
+      ],
+      [
+        2100,
+        1900
+      ],
+      [
+        2200,
+        1650
+      ],
+      [
+        2190,
+        1510
+      ],
+      [
+        2190,
+        1250
+      ],
+      [
+        1900,
+        1000
+      ],
+      [
+        2050,
+        600
+      ],
+      [
+        1950,
+        0
+      ]
+    ],
+    "typical_width_m": 70,
+    "flood_polygon_xz": [
+      [
+        1230,
+        1170
+      ],
+      [
+        1490,
+        1350
+      ],
+      [
+        1790,
+        1290
+      ],
+      [
+        1945,
+        1080
+      ],
+      [
+        2070,
+        920
+      ],
+      [
+        1800,
+        800
+      ],
+      [
+        1480,
+        820
+      ],
+      [
+        1290,
+        960
+      ]
+    ],
+    "crossings": [
+      {
+        "id": "dam_deck",
+        "xz": [
+          2190,
+          1510
+        ],
+        "state": "planned_open"
+      },
+      {
+        "id": "upper_road_bridge",
+        "xz": [
+          2113,
+          2500
+        ],
+        "state": "planned_open"
+      },
+      {
+        "id": "southern_road_bridge",
+        "xz": [
+          2042,
+          550
+        ],
+        "state": "later_unlock"
+      }
+    ],
+    "traversal": "Water is not ordinary walkable ground. Build continuous crossing geometry; exclude deep water from walking navigation."
+  },
+  "railway": {
+    "xz": [
+      [
+        220,
+        2900
+      ],
+      [
+        950,
+        2170
+      ],
+      [
+        1510,
+        1680
+      ],
+      [
+        1990,
+        1080
+      ],
+      [
+        2550,
+        450
+      ]
+    ],
+    "state": "visual_only_broken_span",
+    "note": "Never use the railway as an assumed traversable river crossing."
+  },
+  "palette": {
+    "soot": "#292C29",
+    "concrete": "#8E9184",
+    "dust": "#B5A07A",
+    "rust": "#A65F3E",
+    "foliage": "#64745B",
+    "water": "#426E70",
+    "occupied_light": "#E7AD54"
+  },
+  "phases": [
+    "starter_loop",
+    "four_pack_import_test",
+    "starter_polish_and_measurement",
+    "western_region_expansion",
+    "eastern_landmarks_and_shortcuts"
+  ],
+  "asset_pack_keys": {
+    "zombie": "Quaternius Zombie Apocalypse Kit",
+    "buildings": "Quaternius Ultimate Buildings Pack",
+    "nature": "Quaternius Ultimate Nature Pack",
+    "survival": "Quaternius Survival Pack",
+    "farm": "Quaternius Farm Buildings Pack",
+    "train": "Quaternius Modular Train Pack",
+    "custom": "Primitive blockout, then project-owned custom meshes"
+  },
+  "generated_concept_is_reference_only": true
+}
